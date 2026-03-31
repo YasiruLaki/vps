@@ -22,8 +22,8 @@ func main() {
 		name := os.Args[2]
 		ip := os.Args[3]
 		user := os.Args[4]
-		port := 22 
-		if len(os.Args) >= 7 {
+		port := 22
+		if len(os.Args) >= 6 {
 			fmt.Sscanf(os.Args[5], "%d", &port)
 		}
 		addVPS(name, ip, user, port)
@@ -36,6 +36,13 @@ func main() {
 		}
 		name := os.Args[2]
 		removeVPS(name)
+	case "connect":
+		if len(os.Args) < 3 {
+			fmt.Println("Insufficient arguments for 'connect' command. Run 'vps --help' for more information.")
+			return
+		}
+		name := os.Args[2]
+		connectVPS(name)
 
 	case "--help":
 		printHelp()
