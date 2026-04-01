@@ -1,1 +1,7 @@
 vps_data.json
+
+# Ignore the JSON file that stores VPS data
+vps_data.json
+
+# Ignore the compiled binary
+vps
